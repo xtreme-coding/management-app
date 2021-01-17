@@ -6,11 +6,10 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <p>Here is our custom HTML template</p>
+    <h1>All about leads</h1>
     <ul>
       {% for lead in leads %}
-      <li>{{ lead }}</li>
+      <li>{{ lead.first_name }} {{ lead.last_name }}. Age: {{ lead.age }}</li>
       {% endfor %}
     </ul>
   </body>

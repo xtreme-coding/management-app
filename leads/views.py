@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Lead
 
-def home_page(request):
+def lead_list(request):
     leads = Lead.objects.all()
     context={
         'leads': leads
