@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import Lead
 
 def lead_list(request):
@@ -6,4 +6,10 @@ def lead_list(request):
     context={
         'leads': leads
     }
-    return render(request, 'leads/home_page.html', context)     
+    return render(request, 'leads/home_page.html', context)   
+
+def lead_detail(request, pk):
+    print(pk)
+    lead = Lead.objects.get(id=pk)
+    print(lead)
+    return HttpResponse('Here is the detail view')  

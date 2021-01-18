@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CRM App</title>
   </head>
   <body>
     <h1>All about leads</h1>
     <ul>
       {% for lead in leads %}
-      <li>{{ lead.first_name }} {{ lead.last_name }}. Age: {{ lead.age }}</li>
+      <a href="/leads/{{ lead.pk }}/">
+        <li>{{ lead.first_name }} {{ lead.last_name }}. Age: {{ lead.age }}</li>
+      </a>
       {% endfor %}
     </ul>
   </body>
