@@ -6,10 +6,11 @@ def lead_list(request):
     context={
         'leads': leads
     }
-    return render(request, 'leads/home_page.html', context)   
+    return render(request, 'leads/lead_list.html', context)   
 
 def lead_detail(request, pk):
-    print(pk)
     lead = Lead.objects.get(id=pk)
-    print(lead)
-    return HttpResponse('Here is the detail view')  
+    context = {
+        'lead': lead
+    }
+    return render(request, 'leads/lead_detail.html', context)  
