@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import Lead
+from .forms import LeadForm
 
 def lead_list(request):
     leads = Lead.objects.all()
@@ -16,4 +17,8 @@ def lead_detail(request, pk):
     return render(request, 'leads/lead_detail.html', context)  
 
 def lead_create(request):
-    return render(request, "leads/lead_create.html")
+    print(request.POST)
+    context = {
+        'form': LeadForm()
+    }
+    return render(request, "leads/lead_create.html", context)
