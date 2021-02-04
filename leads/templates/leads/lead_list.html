@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRM App</title>
-</head>
-
-<body>
-    <a href="{% url 'leads:lead-create' %}">Create a new lead</a>
-    <hr />
-    <h1>All about leads</h1>
-    <ul>
-        {% for lead in leads %}
-        <a href="{% url 'leads:lead-detail' lead.pk %}">
-            <li>{{ lead.first_name }} {{ lead.last_name }}. Age: {{ lead.age }}</li>
-        </a>
-        {% endfor %}
-    </ul>
-</body>
-
-</html>
+{% extends "leads/base.html" %}
+{% block content %}
+<a href="{% url 'leads:lead-create' %}">Create a new lead</a>
+<hr />
+<h1>All about leads</h1>
+<ul>
+    {% for lead in leads %}
+    <a href="{% url 'leads:lead-detail' lead.pk %}">
+        <li>{{ lead.first_name }} {{ lead.last_name }}. Age: {{ lead.age }}</li>
+    </a>
+    {% endfor %}
+</ul>
+{% endblock content %}

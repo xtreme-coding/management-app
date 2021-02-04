@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRM App</title>
-</head>
-
-<body>
-    <a href="{% url 'leads:lead-list' %}">Go back to leads</a>
-    <hr />
-    <h1>This is the details of {{lead.first_name}}.</h1>
-    <p>This person's age : {{lead.age}}</p>
-    <p>The agent responsible for this lead : {{ lead.agent }}</p>
-    <hr />
-    <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
-    <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
-</body>
-
-</html>
+{% extends "leads/base.html" %}
+{% block content %}
+<a href="{% url 'leads:lead-list' %}">Go back to leads</a>
+<hr />
+<h1>This is the details of {{lead.first_name}}.</h1>
+<p>This person's age : {{lead.age}}</p>
+<p>The agent responsible for this lead : {{ lead.agent }}</p>
+<hr />
+<a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
+<a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
+{% endblock content %}
