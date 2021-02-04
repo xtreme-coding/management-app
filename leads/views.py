@@ -76,7 +76,7 @@ def lead_delete(request, pk):
     #     form = LeadForm()
     #     if request.method == 'POST':
     #         form = LeadForm(request.POST)
-    #         if form.is_valid():
+    #         if form.is_valid(): 
     #             first_name = form.cleaned_data['first_name']
     #             last_name = form.cleaned_data['last_name']
     #             age = form.cleaned_data['age']
